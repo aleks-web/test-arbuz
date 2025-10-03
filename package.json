@@ -1,0 +1,14 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "Test project",
+  "scripts": {
+    "sass-dev": "sass --watch --update --style=expanded assets/scss:assets/css",
+    "sass-prod": "sass --no-source-map --style=compressed assets/scss:assets/css",
+    "build": "npm run sass-prod",
+    "start": "npm run sass-dev"
+  },
+  "devDependencies": {
+    "sass": "^1.93.2"
+  }
+}
