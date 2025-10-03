@@ -8,6 +8,8 @@ body {
 h2 {
     font-size: 50px;
     font-weight: 500;
+    margin-top: 20px;
+    mergin-bottom: 100px;
 }
 
 p {
@@ -57,6 +59,43 @@ p {
 .calc {
     //display: flex;
     gap: 20px;
+
+    &__tabs {
+        display: flex;
+    }
+
+    &__tab {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 25px;
+        text-align: center;
+        border-bottom: 4px solid #e0e7e9;
+        padding-bottom: 20px;
+        width: 100%;
+        cursor: pointer;
+
+        &.active {
+            border-bottom: 4px solid #00cfcc;
+        }
+    }
+
+    &__choice {
+        margin-top: 100px;
+
+        &-title {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 25px;
+            color: #636363;
+            margin-bottom: 20px;
+        }
+
+        &-wrap {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 20px;
+        }
+    }
 
     &__right {
         box-shadow: 0 14px 94px rgba(0, 41, 46, 0.06);
@@ -181,10 +220,6 @@ p {
             top: 25%;
             left: 25%;
         }
-
-        &.active {
-            display: block;
-        }
     }
 
     &__btn {
@@ -198,22 +233,74 @@ p {
         width: max-content;
     }
 
+    p {
+        text-align: center;
+        padding: 0 15px;
+        line-height: 100%;
+        opacity: .5;
+        font-size: 14px;
+        font-weight: 400;
+    }
+
     &.active {
         .option__btn {
             background-color: #ffdd21;
             color: #000;
             font-weight: 600;
         }
+
+        .option__svg {
+            display: block;
+        }
+
+        p {
+            opacity: 1;
+        }
     }
 }
 
-.option-wrap {
+
+.service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
     p {
         text-align: center;
-        padding: 0 10px;
+        padding: 0 15px;
         line-height: 100%;
+        opacity: .5;
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    &.active {
+        .round-btn {
+            background-color: #ffdd21;
+            color: #DD1D21;
+        }
+
+        p {
+            opacity: 1;
+        }
     }
 }
+
+.round-btn {
+        width: 85px;
+        height: 85px;
+        background-color: #f1f1f1;
+        border-radius: 100%;
+        border: none;
+        color: #99999955;
+
+        svg {
+            width: 50%;
+            height: 50%;
+        }
+
+    }
 
 #markers {
     display: flex;
