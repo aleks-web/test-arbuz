@@ -1,13 +1,16 @@
 <?php
     namespace App\Classes;
 
-    use App\Classes\Region;
-    use App\Classes\Fuel;
-
     class AllSettings {
         private array $regions = [] {
             get {
                 return $this->regions;
+            }
+        }
+
+        private array $promotions = [] {
+            get {
+                return $this->promotions;
             }
         }
 
@@ -17,8 +20,9 @@
             }
         }
 
-        public function __construct(array $regions, array $fuels) {
-            $this->fuels = $fuels;
-            $this->regions = $regions;
+        public function __construct(array $regions, array $fuels, array $promotions) {
+            $this->fuels = $fuels; // Все виды топлива
+            $this->regions = $regions; // Все регионы
+            $this->promotions = $promotions; // Все промо акции
         }
     }

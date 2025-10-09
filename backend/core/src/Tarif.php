@@ -15,15 +15,29 @@ class Tarif {
         }
     }
 
+    private int $discount {
+        get {
+            return $this->discount;
+        }
+    }
+
     private array $fuelInterval { // Интервал прокачки топлива от и до
         get {
             return $this->fuelInterval;
         }
     }
 
-    public function __construct(string $name, string $code, array $fuelInterval) {
+    private array $promotions { // Промо акции
+        get {
+            return $this->promotions;
+        }
+    }
+
+    public function __construct(string $name, string $code, array $fuelInterval, int $discount, array $promotions) {
         $this->name = $name;
         $this->code = $code;
         $this->fuelInterval = $fuelInterval;
+        $this->discount = $discount;
+        $this->promotions = $promotions;
     }
 }
