@@ -1,0 +1,33 @@
+networks:
+    arbus-network:
+        driver: bridge
+        name: arbus_network
+
+services:
+    arbus_nginx:
+        container_name: arbus_nginx
+        build:
+            context: ./
+            dockerfile: docker/nginx/Dockerfile
+        volumes:
+            - ./:/var/www/html
+            - ./docker/nginx/conf.d:/etc/nginx/conf.d
+        ports:
+            - "80:80"
+        expose:
+            - 80
+        networks:
+            - arbus-network
+        depends_on:
+            site: { condition: service_started }
+
+    site:
+        container_name: site
+        build:
+            context: ./
+            dockerfile: ./docker/php-fpm/Dockerfile
+        networks:
+            - arbus-network
+        volumes:
+            - ./:/var/www/html
+            - ./docker/php-fpm/php.ini:/usr/local/etc/php/php.ini
