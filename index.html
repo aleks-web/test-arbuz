@@ -9,15 +9,38 @@
         <link rel="stylesheet" href="./assets/fonts/stylesheet.css">
     </head>
     <body>
+        <header>
+            <div class="header-top container">
+                <img src="./assets/images/card.png" alt="Логотип">
+
+                <div class="btn-color">Заказать карты</div>
+            </div>
+
+            <div class="line"></div>
+
+            <nav class="header-menu container">
+                <ul>
+                    <li><a href="/">Все топливные карты</a></li>
+                    <li><a href="/">Корпоративные карты</a></li>
+                    <li><a href="/">Подбор по регионам</a></li>
+                    <li><a href="/">Акции</a></li>
+                    <li><a href="/">Рейтинг и сравнение</a></li>
+                    <li><a href="/">Список сервисов</a></li>
+                    <li><a href="/">Отзывы</a></li>
+                    <li><a href="/">АЗС на карте</a></li>
+                </ul>
+            </nav>
+        </header>
+
         <section>
             <form class="calc container" >
                 <div class="calc__left">
                     <h2>Калькулятор тарифов</h2>
 
                     <div class="calc__item">
-                        <label for="item-select">Укажите регион передвижения</label>
+                        <label for="list">Укажите регион передвижения</label>
 
-                        <select id="item-select" name="city">
+                        <select class="select" id="list" name="city">
                             <option value="Len">Ленинградская область</option>
                             <option value="Tum">Тюменская область</option>
                             <option value="Sam">Самарская область</option>
@@ -25,15 +48,19 @@
                     </div>
 
                     <div class="calc__item">
-                        <label for="item-range">Прокачка</label>
+                        <label for="weight">Прокачка</label>
 
-                        <input id="item-range" type="range" min="0" max="500" step="50" list="markers">
+                        <input class="input" id="weight" type="text" placeholder="200 тонн">
+
+                        <div class="calc__item-range">
+                            <input class="range-input" id="range" type="range" value="200" min="0" max="500" step="50" list="markers">
                         
-                        <datalist id="markers">
-                            <option value="0" label="0 тонн"></option>
-                            <option value="250" label="250 тонн"></option>
-                            <option value="500" label="500+ тонн"></option>
-                        </datalist>
+                            <datalist id="markers">
+                                <option value="0" label="0 тонн"></option>
+                                <option value="250" label="250 тонн"></option>
+                                <option value="500" label="500+ тонн"></option>
+                            </datalist>
+                        </div>
                     </div>
 
                     <div class="calc__tabs">
